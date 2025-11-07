@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Currículo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<h1>Gerador de Currículo</h1>
+
+<form action="processar.php" method="post">
+  <label for="nome">Nome:</label>
+  <input type="text" name="nome" required>
+
+  <label for="dataNascimento">Data de Nascimento:</label>
+  <input type="date" id="dataNascimento" name="dataNascimento" required onchange="calcularIdade()">
+
+  <label for="telefone">Telefone:</label>
+  <input type="text" id="telefone" name="telefone" placeholder="(99) 99999-9999" required>
+
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email" placeholder="nome@gmail.com" required>
+
+  <h2>Experiência profissional</h2>
+  <div class="campo">
+      <label for="cargo">Cargo:</label>
+      <input type="text" name="cargo[]" placeholder="Cargo" required>
+
+      <label for="empresa">Empresa:</label>
+      <input type="text" name="empresa[]" placeholder="Empresa" required>
+  </div>
+
+  <button type="submit">Enviar Currículo</button>
+</form>
+
+<button type="button" onclick="baixarCurriculo()">Baixar Currículo (.txt)</button>
+
+<div id="idadeDisplay"></div> 
+
+</body>
+</html>
